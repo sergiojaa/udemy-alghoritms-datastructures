@@ -97,3 +97,21 @@
 
 //pointers
 
+// let num1 = 5 
+// let num2 = num1    
+// num1 = 10     num2 aricvleba
+// console.log(num2) //5
+
+let obj1 = {
+    value:11
+}
+let obj2 = obj1 //ak icvleba orive 
+console.log(obj2)    //11  
+obj1.value = 22   //obj2 icvleba
+console.log(obj2)  //22
+let obj3 = {
+    value:51
+}
+obj2 = obj3
+obj1 = obj2
+console.log(obj1)
