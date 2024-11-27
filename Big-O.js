@@ -74,3 +74,26 @@
 
 //big o wrap up
 
+
+//classes & pointers
+
+//classes
+// class Cookie {
+//     constructor(color){
+//         this.color = color
+//     }
+//     getColor(){
+//         return this.color
+//     }
+//     setColor(color){
+//        return this.color = color
+//     }
+// }
+// let cookieOne = new Cookie('green')
+
+// let cookieTwo = new Cookie('blue')
+// console.log(cookieOne.setColor('red'))
+// console.log(cookieTwo.getColor())
+
+//pointers
+
