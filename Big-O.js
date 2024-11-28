@@ -102,16 +102,75 @@
 // num1 = 10     num2 aricvleba
 // console.log(num2) //5
 
-let obj1 = {
-    value:11
+// let obj1 = {
+//     value:11
+// }
+// let obj2 = obj1 //ak icvleba orive 
+// console.log(obj2)    //11  
+// obj1.value = 22   //obj2 icvleba
+// console.log(obj2)  //22
+// let obj3 = {
+//     value:51
+// }
+// obj2 = obj3
+// obj1 = obj2
+// console.log(obj1)
+
+
+// linked lists 
+// linked lists big O
+// constructor 
+// class Node {
+//   constructor(value){
+//     this.value = value
+//     this.next = null
+//   }
+// }
+// class LinkedLists {
+//   constructor(value){
+//     const newNode = new Node(value)
+//     this.head = newNode
+//     this.tail = this.head
+//     this.length = 1
+//   }
+// }
+// let myLinkedLists = new LinkedLists(4);
+// console.log(myLinkedLists)
+
+
+//push
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
 }
-let obj2 = obj1 //ak icvleba orive 
-console.log(obj2)    //11  
-obj1.value = 22   //obj2 icvleba
-console.log(obj2)  //22
-let obj3 = {
-    value:51
+
+class LinkedLists {
+  constructor(value) {
+    const newNode = new Node(value);
+    this.head = newNode;
+    this.tail = newNode;
+    this.length = 1;
+  }
+
+  push(value) {
+    const newNode = new Node(value);
+
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+
+    this.length++;
+    return this;
+  }
 }
-obj2 = obj3
-obj1 = obj2
-console.log(obj1)
+
+let myLinkedList = new LinkedLists(7); // Use the correct class name
+myLinkedList.push(4);
+
+console.log(myLinkedList);
