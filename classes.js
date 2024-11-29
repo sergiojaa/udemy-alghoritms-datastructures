@@ -114,4 +114,29 @@
 // developSoftware(programmers)
 
 // //class polymorphism
+//პოლიმორფიზმი არის მეთოდის ხელახალი განსაზღვრის აქტი 
+//მშობლის შვილობილი კლასის შიგნით
+// class Animal {
+//     constructor (name){
+//         this.name = name
+//     }
+//     makeSound () {
+//         console.log(` generic animal sound!`)
+//     }
+// }
+// class Dog extends Animal {
+//     constructor (name) {
+//         super(name)
+//     }
+//     makeSound(){
+//         super.makeSound()
+//         console.log(`woof! woof!`)
+//     }
+// }
+// const a1 = new Animal('animal ')
+// const a2 = new Dog('jeff')
+// a1.makeSound()
+// a2.makeSound()
+
+// classesin practise
 
