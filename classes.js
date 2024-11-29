@@ -24,18 +24,31 @@
   //თითქოს ისინი თვისებებია, ისინი ჰგვანან თვისებებს, მაგრამ 
   //ისინი კლასის მეთოდებია
 
-  class Square {
-    constructor (_width){
-        this.width = _width 
-        this.height = _width 
-    }
+//   class Square {
+//     constructor (_width){
+//         this.width = _width 
+//         this.height = _width 
+//         this.numOFRequestForArea = 0
+//     }
 
-    get area (){
-        return this.width + this.height;
-    }
-  }
-  let square1 = new Square(25)
-  console.log(square1.area)    // () agaraa sachirp
-  
+//     get area (){
+//         this.numOFRequestForArea++
+//         return this.width * this.height;
+//     }
+
+//     set area(area){
+//         this.width = Math.sqrt(area)   //kvadratul fesvs abtunebs
+//         this.height = this.width
+       
+//     }
+//   }
+//   let square1 = new Square(4)
+//   console.log(square1.area)    // () agaraa sachirp
+//   square1.area = 25
+//   console.log(square1.area)
+//  console.log(square1.numOFRequestForArea)
+
+// classes static methods
+
 
 
