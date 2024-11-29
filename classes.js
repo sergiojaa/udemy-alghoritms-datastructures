@@ -48,7 +48,70 @@
 //   console.log(square1.area)
 //  console.log(square1.numOFRequestForArea)
 
-// classes static methods
+// classes static methods 
+//ის რეალურად არ ვარ ინსტანციირებული ობიექტის ნაწილი, ის
+// შეიქმნა, ამიტომ სტატიკური მეთოდი არ საჭიროებს კლასის 
+//ინსტანციის შექმნას გამოსაყენებლად
+
+// class Square {
+//     constructor(_width){
+//         this.width = _width 
+//         this.height = _width 
+//     }
+//     static equals (a, b){
+//         return a.width + a.height === b.width + b.height
+//     }
+
+//     static isValidimensions (width,height){
+//         return width === height;
+//     }
+
+// }
+// let square1 = new Square(8)
+// let square2 = new Square(8)
+
+// console.log(Square.equals(square1,square2))
+// console.log(Square.isValidimensions(6,6))
 
 
+// classes inheritance & extends
+
+// class Person {
+//     constructor(_name, _age){
+//         this.name = _name 
+//         this.age = _age;
+//     }
+//     describe(){
+//         console.log(`I am ${this.name} and I am ${this.age} years`)
+//     }
+// }
+// class Programmer extends Person {
+//     constructor(_name,_age, _yearsOfExperience) {
+//         super(_name,_age) 
+//         //custom behaviour
+//         this.yearsOfExperience = _yearsOfExperience
+//     }
+//     code(){
+//         console.log(`${this.name} is coding`)
+//     }
+// }
+// const programmers = [
+//     new Programmer ('Dom',56,12),
+//     new Programmer('jeff',24,3)
+// ]
+// // let person1 = new Person('jeff', 45)
+// // let programmer1 = new Programmer("dom",42,12)
+
+// // programmer1.code()
+
+// // console.log(programmers)
+// function developSoftware(programmers){
+//     // develo software
+//     for(let programmer of programmers){
+//         programmer.code()
+//     }
+// }
+// developSoftware(programmers)
+
+// //class polymorphism
 
