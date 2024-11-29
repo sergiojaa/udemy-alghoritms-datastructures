@@ -137,40 +137,68 @@
 // let myLinkedLists = new LinkedLists(4);
 // console.log(myLinkedLists)
 
+//linked lists first data structure
+// arayshi indexebi ar aqvs, isinimemoryshi gverdi gverd
+//araa savaldebulo rom ikvnen. 
+// first item = head
+//last item = tail
+
+//big-O
+//constructor 
+class Node {
+  constructor(value){
+    this.value = value
+    this.next = null
+  }
+}
+class LinkedList{
+  constructor(value){
+    const newNode = new Node(value)
+    this.head = newNode;
+    this.tail = this.head;
+    this.length = 1
+  }
+}
+let myLinkedList = new LinkedList(4)
+console.log(myLinkedList)
+// const newNode = new Node(4)
+// console.log(newNode)
+
+
 
 //push
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-  }
-}
+// class Node {
+//   constructor(value) {
+//     this.value = value;
+//     this.next = null;
+//   }
+// }
 
-class LinkedLists {
-  constructor(value) {
-    const newNode = new Node(value);
-    this.head = newNode;
-    this.tail = newNode;
-    this.length = 1;
-  }
+// class LinkedLists {
+//   constructor(value) {
+//     const newNode = new Node(value);
+//     this.head = newNode;
+//     this.tail = newNode;
+//     this.length = 1;
+//   }
 
-  push(value) {
-    const newNode = new Node(value);
+//   push(value) {
+//     const newNode = new Node(value);
 
-    if (!this.head) {
-      this.head = newNode;
-      this.tail = newNode;
-    } else {
-      this.tail.next = newNode;
-      this.tail = newNode;
-    }
+//     if (!this.head) {
+//       this.head = newNode;
+//       this.tail = newNode;
+//     } else {
+//       this.tail.next = newNode;
+//       this.tail = newNode;
+//     }
 
-    this.length++;
-    return this;
-  }
-}
+//     this.length++;
+//     return this;
+//   }
+// }
 
-let myLinkedList = new LinkedLists(7); // Use the correct class name
-myLinkedList.push(4);
+// let myLinkedList = new LinkedLists(7); // Use the correct class name
+// myLinkedList.push(4);
 
-console.log(myLinkedList);
+// console.log(myLinkedList);
