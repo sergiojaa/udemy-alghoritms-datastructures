@@ -173,12 +173,6 @@ class LinkedList {
       return this
     }   
   }
-  
-  
- 
-
-
-
 let myLinkedList = new LinkedList(1);
 console.log(myLinkedList)
 console.log(myLinkedList.push(2))
