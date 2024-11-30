@@ -147,33 +147,74 @@
 //constructor 
 class Node {
   constructor(value){
-    this.value = value
+    this.value = value;
     this.next = null
   }
 }
-class LinkedList{
+class LinkedList {
   constructor(value){
-    const newNode = new Node(value)
+    const newNode = new Node(value);
     this.head = newNode;
     this.tail = this.head;
     this.length = 1
+
   }
-  push(value){
+   push(value) {
     const newNode = new Node(value)
-    if(!this.head){
-      this.head = newNode;
-      this.tail = newNode
-    } else{
-      this.tail.next = newNode;
-      this.tail = newNode
-    }
-    this.length++;
-    return this
+      
+      if(!this.head){
+        this.head = newNode;
+        this.tail = newNode
+      }else{
+        this.tail.next = newNode;
+        this.tail = newNode
+      }
+      this.length++;
+      return this
+    }   
   }
-}
-let myLinkedList = new LinkedList(1)
+  
+  
+ 
+
+
+
+let myLinkedList = new LinkedList(1);
 console.log(myLinkedList)
 console.log(myLinkedList.push(2))
+
+
+
+
+// class Node {
+//   constructor(value){
+//     this.value = value
+//     this.next = null
+//   }
+// }
+// class LinkedList{
+//   constructor(value){
+//     const newNode = new Node(value)
+//     this.head = newNode;
+//     this.tail = this.head;
+//     this.length = 1
+//   }
+//   push(value){
+//     const newNode = new Node(value)
+//     if(!this.head){
+//       this.head = newNode;
+//       this.tail = newNode
+//     } else{
+//       this.tail.next = newNode;
+//       this.tail = newNode
+//     }
+//     this.length++;
+//     return this
+//   }
+// }
+// let myLinkedList = new LinkedList(1)
+// console.log(myLinkedList)
+// console.log(myLinkedList.push(2))
 
 
 
