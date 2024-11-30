@@ -174,7 +174,6 @@ class LinkedList{
 let myLinkedList = new LinkedList(1)
 console.log(myLinkedList)
 console.log(myLinkedList.push(2))
-console.log(myLinkedList.push(3))
 
 
 
