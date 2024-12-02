@@ -321,7 +321,7 @@ class LinkedLists {
       this.head = newNode;
       this.tail = newNode;
     }else{
-      newNode.next = this.head;
+      newNode.next = this.head;  // amjamindeli head
       this.head = newNode;
     }
     this.length++;
