@@ -299,3 +299,35 @@
 
 // myLinkedList.pop()
 // console.log(myLinkedList);
+
+//unshift
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class LinkedLists {
+  constructor(value) {
+    const newNode = new Node(value);
+    this.head = newNode;
+    this.tail = newNode;
+    this.length = 1;
+  }
+  unshift(value){
+    const newNode = new Node(value)
+    if(!this.head){
+      this.head = newNode;
+      this.tail = newNode;
+    }else{
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
+  }
+}
+let myLinkedList = new LinkedLists(1)
+myLinkedList.unshift(0)
+console.log(myLinkedList)
