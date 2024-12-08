@@ -130,6 +130,60 @@
 
 // console.log(myLinkedList.toObject())
 
+// class Node {
+//     constructor(name,year){
+//         this.name = name;
+//         this.year = year;
+//         this.next = null
+//     }
+// }
+// class LinkedList {
+//     constructor(name,year){
+//         const newNode = new Node(name,year)
+//         this.head = newNode;
+//         this.tail = newNode;
+//     }
+//     toObject(){
+//         const nodes = []
+//         let current = this.head;
+//         while(current){
+//             nodes.push({name: current.name, year: current.year})
+//             current = current.next
+//         }
+//         return nodes
+//     }
+//     Push(name,year){
+//         const newNode = new Node(name,year)
+//         if(!this.head){
+//             this.head = newNode;
+//             this.tail = newNode;
+//         }else{
+//             this.tail.next = newNode;
+//             this.tail = newNode;
+//         }
+//         this.length++;
+//         return this
+//     }
+//     unShift(name,year){
+//         const newNode = new Node(name,year)
+//         if(!this.head){
+//             this.head = newNode;
+//             this.tail = newNode;
+//         }else{
+//             newNode.next = this.head;
+//             this.head = newNode;
+//         }
+//         this.length++;
+//         return this
+//     }
+
+// }
+// const myLinkedList = new LinkedList('bmw',2022)
+// myLinkedList.Push('mercedes','2024')
+// myLinkedList.unShift('oee',2022)
+// console.log(myLinkedList.toObject())
+
+
 class Node {
     constructor(name,year){
         this.name = name;
@@ -164,22 +218,26 @@ class LinkedList {
         this.length++;
         return this
     }
-    unShift(name,year){
+    Shift(name,year){
         const newNode = new Node(name,year)
-        if(!this.head){
-            this.head = newNode;
-            this.tail = newNode;
-        }else{
-            newNode.next = this.head;
-            this.head = newNode;
+        if(!this.head) return undefined;
+        let temp = this.head;
+        this.head = this.head.next;
+        temp.next = null;
+        if(this.length === 0){
+            this.head = null;
+            this.tail = null
         }
-        this.length++;
-        return this
+        this.length--
+        return temp
     }
 
 }
 const myLinkedList = new LinkedList('bmw',2022)
 myLinkedList.Push('mercedes','2024')
-myLinkedList.unShift('audi',2022)
+myLinkedList.Shift()
 console.log(myLinkedList.toObject())
+
+
+
 
