@@ -92,24 +92,24 @@
 //         this.length++;
 //         return this
 //     }
-//     Pop(){
-//         if(!this.head)return undefined 
-//         let temp = this.head;
-//         let pre = this.head;
-//         while(temp.next){
-//             pre = temp;
-//             temp = temp.next
-//         }
-//         this.tail = pre;
-//         this.tail.next = null
-//         this.length --
-//         if(this.length === 0){
-//             this.head = null;
-//             this.tail = null
-//         }
-//         return temp
+    // Pop(){
+    //     if(!this.head)return undefined 
+    //     let temp = this.head;
+    //     let pre = this.head;
+    //     while(temp.next){
+    //         pre = temp;
+    //         temp = temp.next
+    //     }
+    //     this.tail = pre;
+    //     this.tail.next = null
+    //     this.length --
+    //     if(this.length === 0){
+    //         this.head = null;
+    //         this.tail = null
+    //     }
+    //     return temp
 
-//     }
+    // }
 //     toObject() {
 //         const nodes = [];
 //         let current = this.head;
@@ -206,6 +206,24 @@ class LinkedList {
         }
         return nodes
     }
+    Pop(){
+        if(!this.head)return undefined 
+        let temp = this.head;
+        let pre = this.head;
+        while(temp.next){
+            pre = temp;
+            temp = temp.next
+        }
+        this.tail = pre;
+        this.tail.next = null
+        this.length --
+        if(this.length === 0){
+            this.head = null;
+            this.tail = null
+        }
+        return temp
+
+    }
     Push(name,year){
         const newNode = new Node(name,year)
         if(!this.head){
@@ -273,6 +291,17 @@ Insert(index,value){
     this.length++;
     return true;
 
+    }
+    Remove(index){
+        if(index === 0) return this.Shift()
+        if(index === this.length - 1)return this.Pop();
+        if(index < 0 || index >= this.length) return undefined;
+        const before = this.Get(index - 1)
+        const temp = before.next;
+        before.next = temp.next;
+        temp.next = null;
+        this.length--;
+        return temp;
     }
 }
 const myLinkedList = new LinkedList('bmw',2022)
