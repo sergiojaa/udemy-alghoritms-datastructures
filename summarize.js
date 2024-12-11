@@ -241,15 +241,22 @@ class LinkedList {
         }
         return temp
     }
+    Set(index,value){
+        let temp = this.Get(index)
+        if(temp){
+        temp.value = value;
+         return true
+    }
+    return false
 
+}
 }
 const myLinkedList = new LinkedList('bmw',2022)
 myLinkedList.Push('mercedes','2024')
-myLinkedList.Push('mercedes','2022')
 myLinkedList.Push('mercedes','20222')
 
 myLinkedList.Get(1)
-console.log(myLinkedList.Get(2))
+console.log(myLinkedList.Set(1,1))
 
 
 
