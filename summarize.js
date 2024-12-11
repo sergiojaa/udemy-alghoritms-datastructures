@@ -231,12 +231,25 @@ class LinkedList {
         this.length--
         return temp
     }
+    Get(index){
+        if(index < 0 || index >= this.length){
+            return undefined;
+        }
+        let temp = this.head
+        for(let i = 0; i < index;i++){
+            temp = temp.next;
+        }
+        return temp
+    }
 
 }
 const myLinkedList = new LinkedList('bmw',2022)
 myLinkedList.Push('mercedes','2024')
-myLinkedList.Shift()
-console.log(myLinkedList.toObject())
+myLinkedList.Push('mercedes','2022')
+myLinkedList.Push('mercedes','20222')
+
+myLinkedList.Get(1)
+console.log(myLinkedList.Get(2))
 
 
 
