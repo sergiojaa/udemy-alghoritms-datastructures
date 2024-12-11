@@ -164,18 +164,18 @@
 //         this.length++;
 //         return this
 //     }
-//     unShift(name,year){
-//         const newNode = new Node(name,year)
-//         if(!this.head){
-//             this.head = newNode;
-//             this.tail = newNode;
-//         }else{
-//             newNode.next = this.head;
-//             this.head = newNode;
-//         }
-//         this.length++;
-//         return this
-//     }
+    // unShift(name,year){
+    //     const newNode = new Node(name,year)
+    //     if(!this.head){
+    //         this.head = newNode;
+    //         this.tail = newNode;
+    //     }else{
+    //         newNode.next = this.head;
+    //         this.head = newNode;
+    //     }
+    //     this.length++;
+    //     return this
+    // }
 
 // }
 // const myLinkedList = new LinkedList('bmw',2022)
@@ -231,6 +231,18 @@ class LinkedList {
         this.length--
         return temp
     }
+    unShift(name,year){
+        const newNode = new Node(name,year)
+        if(!this.head){
+            this.head = newNode;
+            this.tail = newNode;
+        }else{
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+        this.length++;
+        return this
+    }
     Get(index){
         if(index < 0 || index >= this.length){
             return undefined;
@@ -250,6 +262,18 @@ class LinkedList {
     return false
 
 }
+Insert(index,value){
+    if(index === 0) return this.unShift(value)
+    if(index === this.length) return this.Push(value);
+    if(index < 0 || index > this.length)return false;
+    const newNode = new Node(value)
+    const temp = this.Get(index - 1)
+    newNode.next = temp.next;
+    temp.next = newNode;
+    this.length++;
+    return true;
+
+    }
 }
 const myLinkedList = new LinkedList('bmw',2022)
 myLinkedList.Push('mercedes','2024')
