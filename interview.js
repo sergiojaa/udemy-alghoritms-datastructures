@@ -104,6 +104,24 @@ class LinkedList {
 
         return this;
     }
+    removeDuplicates(){
+        let current = this.head;
+        let seen = new Set();  // To keep track of the unique values
+        let previous = null; // To manage the next pointer
+        
+        while (current !== null) {
+            if (seen.has(current.value)) {
+                // If value is already seen, remove the current node
+                previous.next = current.next;
+                this.length--; // Decrement length of the list
+            } else {
+                // Otherwise, mark the value as seen
+                seen.add(current.value);
+                previous = current; // Move previous pointer forward
+            }
+            current = current.next;  // Move to the next node
+        }
+	}
     
 
    
@@ -117,8 +135,13 @@ myLinkedList.push(4)
 myLinkedList.push(5)
 myLinkedList.push(5)
 myLinkedList.push(6)
+console.log("Before removing duplicates:", myLinkedList.toObject());
+
+myLinkedList.removeDuplicates();  // Remove duplicates
+
+console.log("After removing duplicates:", myLinkedList.toObject());
 // myLinkedList.findMiddleNode()
 // const kthNode = myLinkedList.findKthFromEnd(5)
-console.log(myLinkedList.toObject())
+
 
 // console.log(myLinkedList.findMiddleNode())
