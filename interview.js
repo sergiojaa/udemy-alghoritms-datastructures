@@ -70,13 +70,40 @@ class LinkedList {
         return slow;
 
     }
-    partitionList(x){
-	    let low = this.head;
-        let high = this.head;
-        for(let i = 0;i < x;i++){
-            
+    partitionList(x) {
+        // Dummy nodes for low and high lists
+        let lowHead = new Node(0); // Dummy node for low list
+        let highHead = new Node(0); // Dummy node for high list
+
+        let low = lowHead; // Start with the low list
+        let high = highHead; // Start with the high list
+        let current = this.head; // Start with the head of the original list
+
+        // Traverse the entire list
+        while (current !== null) {
+            if (current.value < x) {
+                // Add to low list if value is less than x
+                low.next = current;
+                low = low.next;
+            } else {
+                // Add to high list if value is greater or equal to x
+                high.next = current;
+                high = high.next;
+            }
+            current = current.next; // Move to the next node
         }
-	}
+
+        // Ensure the high list ends with null to avoid circular references
+        high.next = null;
+
+        // Combine the low and high lists
+        low.next = highHead.next;
+
+        // Update the head of the list to point to the first node of the low list
+        this.head = lowHead.next;
+
+        return this;
+    }
     
 
    
@@ -88,9 +115,10 @@ myLinkedList.push(3)
 
 myLinkedList.push(4)
 myLinkedList.push(5)
+myLinkedList.push(5)
 myLinkedList.push(6)
 // myLinkedList.findMiddleNode()
 // const kthNode = myLinkedList.findKthFromEnd(5)
-console.log(myLinkedList)
+console.log(myLinkedList.toObject())
 
 // console.log(myLinkedList.findMiddleNode())
