@@ -72,8 +72,12 @@ class LinkedList {
     }
     partitionList(x){
 	    let low = this.head;
-        let fast = this.head;
+        let high = this.head;
+        for(let i = 0;i < x;i++){
+            
+        }
 	}
+    
 
    
 }
@@ -85,8 +89,8 @@ myLinkedList.push(3)
 myLinkedList.push(4)
 myLinkedList.push(5)
 myLinkedList.push(6)
-myLinkedList.findMiddleNode()
-const kthNode = myLinkedList.findKthFromEnd(5)
-console.log(kthNode ? kthNode.value : null);
+// myLinkedList.findMiddleNode()
+// const kthNode = myLinkedList.findKthFromEnd(5)
+console.log(myLinkedList)
 
 // console.log(myLinkedList.findMiddleNode())
