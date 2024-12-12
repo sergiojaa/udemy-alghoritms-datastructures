@@ -122,7 +122,18 @@ class LinkedList {
             current = current.next;  // Move to the next node
         }
 	}
-    
+    binaryToDecimal() {
+        let num = 0;
+        let current = this.head;  // დასაწყისი, სიაში პირველი ელემენტი
+        
+        // სიაში ყველა ელემენტის გავლა
+        while (current !== null) {
+            num = num * 2 + current.value;  // გადახედვა და მნიშვნელობის დამატება
+            current = current.next;  // შემდეგ ელემენტზე გადასვლა
+        }
+        
+        return num;  // შედეგის დაბრუნება
+    }
 
    
 }
