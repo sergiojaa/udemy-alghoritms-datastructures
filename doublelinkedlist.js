@@ -248,3 +248,13 @@ let myDoublyLinkedList = new DoublyLinkedList(1)
 myDoublyLinkedList.Push(2)
 myDoublyLinkedList.get(1)
 console.log(myDoublyLinkedList)
+
+// set doublyLinkedList
+set(index,value){
+    let temp = this.get(index)
+    if(temp){
+        temp.value = value;
+        return true;
+    }
+    return false;
+}
