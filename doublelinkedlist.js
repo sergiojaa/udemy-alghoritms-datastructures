@@ -250,11 +250,13 @@ myDoublyLinkedList.get(1)
 console.log(myDoublyLinkedList)
 
 // set doublyLinkedList
-set(index,value){
-    let temp = this.get(index)
-    if(temp){
-        temp.value = value;
-        return true;
-    }
-    return false;
-}
+// set(index,value){
+//     let temp = this.get(index)
+//     if(temp){
+//         temp.value = value;
+//         return true;
+//     }
+//     return false;
+// }
+
+// insert doubylinked list
