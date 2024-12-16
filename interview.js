@@ -193,3 +193,58 @@
 // // console.log(myLinkedList.findMiddleNode())
 
 //doubli linked list interviews
+class Node {
+    constructor(value){
+        this.value = value;
+        this.prev = null
+        this.next = null
+    }
+}
+class DoubliLinkedList {
+    constructor(value){
+        const newNode = new Node(value)
+        this.head = newNode;
+        this.tail = newNode;
+        this.length = 1
+    }
+    push(value){
+        const newNode = new Node(value)
+        if(this.length === 0){
+            this.head = newNode;
+            this.tail = newNode;
+        }else{
+            this.tail.next = newNode;
+            newNode.prev = this.tail;
+            this.tail = newNode;
+        }
+        this.length++;
+        return this
+    }
+    toObject(){
+        const arr = [];
+        let current = this.head;
+    
+        while (current) {
+            arr.push({
+                value: current.value,
+                prev: current.prev ? current.prev.value : null,
+                next: current.next ? current.next.value : null
+            });
+            current = current.next;
+        }
+    
+        return arr; // Return the array of objects
+    }
+    swapFirstLast(){
+      if(this.length <=1) return;
+      const temp = this.head.value;
+      this.head.value = this.tail.value;
+      this.tail.value = temp
+
+    }
+}
+const myDoublyLinkedList = new DoubliLinkedList(1)
+myDoublyLinkedList.push(2)
+myDoublyLinkedList.push(3)
+myDoublyLinkedList.swapFirstLast()
+console.log(myDoublyLinkedList.toObject())
