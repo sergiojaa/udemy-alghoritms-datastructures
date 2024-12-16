@@ -258,6 +258,42 @@ class DoubliLinkedList {
 
         return true;
     }
+    swapPairs() {
+        if (!this.head || !this.head.next) return; // No pairs to swap in an empty or single-node list
+
+        let current = this.head;
+
+        while (current && current.next) {
+            const first = current;
+            const second = current.next;
+
+            // Swap first and second
+            const prevNode = first.prev;
+            const nextNode = second.next;
+
+            if (prevNode) {
+                prevNode.next = second;
+            } else {
+                this.head = second; // Update head if swapping the first pair
+            }
+
+            if (nextNode) {
+                nextNode.prev = first;
+            } else {
+                this.tail = first; // Update tail if swapping the last pair
+            }
+            
+            second.prev = prevNode;
+            second.next = first;
+            first.prev = second;
+            first.next = nextNode;
+
+            // Move to the next pair
+            current = nextNode;
+        }
+       
+   }
+
 }
 const myDoublyLinkedList = new DoubliLinkedList(1)
 myDoublyLinkedList.push(2)
@@ -265,5 +301,5 @@ myDoublyLinkedList.push(3)
 myDoublyLinkedList.push(2)
 myDoublyLinkedList.push(1)
 
-myDoublyLinkedList.isPalindrome()
-console.log(myDoublyLinkedList.isPalindrome())
+myDoublyLinkedList.swapPairs()
+console.log(myDoublyLinkedList.toObject())
