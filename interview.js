@@ -242,9 +242,28 @@ class DoubliLinkedList {
       this.tail.value = temp
 
     }
+    isPalindrome() {
+        if (!this.head || !this.head.next) return true; 
+
+        let left = this.head;
+        let right = this.tail;
+
+        while (left !== right && left.prev !== right) {
+            if (left.value !== right.value) {
+                return false;
+            }
+            left = left.next;
+            right = right.prev;
+        }
+
+        return true;
+    }
 }
 const myDoublyLinkedList = new DoubliLinkedList(1)
 myDoublyLinkedList.push(2)
 myDoublyLinkedList.push(3)
-myDoublyLinkedList.swapFirstLast()
-console.log(myDoublyLinkedList.toObject())
+myDoublyLinkedList.push(2)
+myDoublyLinkedList.push(1)
+
+myDoublyLinkedList.isPalindrome()
+console.log(myDoublyLinkedList.isPalindrome())
