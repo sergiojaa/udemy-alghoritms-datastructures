@@ -557,5 +557,8 @@ insert(index,value){
 }
 let myLinkedList = new LinkedLists(11)
 
+//linked listebshi  unshift shift O1, pop On, push o1;
+
+
 
 

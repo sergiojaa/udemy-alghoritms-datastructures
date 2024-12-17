@@ -317,13 +317,29 @@ Insert(index,value){
         }
         return this;
     }
+    isPalindrome() {
+        if (!this.head || !this.head.next) return true; 
+
+        let left = this.head;
+        let right = this.tail;
+
+        while (left !== right && left.prev !== right) {
+            if (left.value !== right.value) {
+                return false;
+            }
+            left = left.next;
+            right = right.prev;
+        }
+
+        return true;
+    }
 }
 const myLinkedList = new LinkedList('bmw',2022)
 myLinkedList.Push('mercedes','2024')
 myLinkedList.Push('mercedes','20222')
 
-myLinkedList.Get(1)
-console.log(myLinkedList.Set(1,1))
+// myLinkedList.Get(1)
+console.log(myLinkedList)
 
 
 
