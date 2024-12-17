@@ -43,7 +43,9 @@
 
 //queue intro; ragac xazzero dgas kaci ramagis ikit roarmidis;
 //deqeueu aris roca vinmes moashores, anu washli ra. fifo.first in first out
+//dequeue igivea tavshi moashoro shift ra,
 //enqueue aris ro daamato magat ukan vinme ra rigis pontshi
+
 //aq unda daamaato ertmxars da moashoro meore mxares; pus pop big1unshift shift big-
 // enques anu damateba marjvena bolodan, amoshla marcxniv bolodan, orive big O1 aris;
 class Node {
@@ -72,7 +74,21 @@ class Queue{
         this.length++
         return this;
     }
+    dequeue(){
+        if(this.length === 0)return undefined;
+        let temp = this.first;
+        if(this.length === 1){
+            this.first = null;
+            this.last = null;
+        }else{
+            this.first = this.first.next;
+            temp.next = null;
+        }
+        this.length--;
+        return temp
+    }
 }
 let myQueue = new Queue(1)
 
 console.log(myQueue)
+
