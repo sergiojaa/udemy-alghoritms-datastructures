@@ -45,3 +45,34 @@
 //deqeueu aris roca vinmes moashores, anu washli ra. fifo.first in first out
 //enqueue aris ro daamato magat ukan vinme ra rigis pontshi
 //aq unda daamaato ertmxars da moashoro meore mxares; pus pop big1unshift shift big-
+// enques anu damateba marjvena bolodan, amoshla marcxniv bolodan, orive big O1 aris;
+class Node {
+    constructor(value){
+        this.value = value;
+        this.next = null
+    }
+}
+class Queue{
+    constructor(value){
+        const newNode = new Node(value)
+        this.first = newNode;
+        this.last = newNode;
+        this.length = 1;
+    }
+    enqueue(value){
+        const newNode = new Node(value)
+        if(this.length === 0){
+            this.first = newNode;
+            this.last = newNode;
+        }else{
+            this.last.next = newNode;
+            this.last = newNode;
+
+        }
+        this.length++
+        return this;
+    }
+}
+let myQueue = new Queue(1)
+
+console.log(myQueue)
