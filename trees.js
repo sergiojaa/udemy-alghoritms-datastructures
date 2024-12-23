@@ -13,7 +13,7 @@
 // }
 // let myTree = new BST()
 // console.log(myTree)
-//BST insert
+//BST insert   da // contains
 class Node{
     constructor(value){
         this.value = value;
@@ -50,6 +50,20 @@ class BST{
             
         }
     }
+    contains(value){
+        if(this.root === null) return false;
+        let temp = this.root;
+        while(temp){
+            if(value < temp.value){
+                temp = temp.left
+            }else if(value > temp.value){
+                temp = temp.right;
+            }else{
+                return true;
+            }
+        }
+        return false;
+    }
 }
 let myTree = new BST()
 myTree.insert(12)
@@ -59,4 +73,5 @@ myTree.insert(11)
 myTree.insert(155)
 myTree.insert(133)
 myTree.insert(12)
-console.log(myTree)
+console.log(myTree.contains(12))
+
