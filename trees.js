@@ -1,1 +1,16 @@
-console.log('hello world')
+// constructor trees, binary search trees.
+class Node{
+    constructor(value){
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
+}
+class BST{
+    constructor(){
+        this.root = null;
+    }
+}
+let myTree = new BST()
+console.log(myTree)
+//BST insert
