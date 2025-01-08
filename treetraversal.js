@@ -1,4 +1,6 @@
 // breadth first search  code
+// dfs:  depth first search preorder code 
+
 class Node {
     constructor(value){
         this.value = value;
@@ -34,19 +36,29 @@ class BST {
             }
         }
     }
-    bfs(){
-        let currentNode = this.root;
-        let queue = [];
-        let results = [];
+    // bfs(){
+    //     let currentNode = this.root;
+    //     let queue = [];
+    //     let results = [];
     
-        queue.push(currentNode)
-        while(queue.length){
-            currentNode = queue.shift();
+    //     queue.push(currentNode)
+    //     while(queue.length){
+    //         currentNode = queue.shift();
+    //         results.push(currentNode.value)
+    //         if(currentNode.left) queue.push(currentNode.left)
+    //             if(currentNode.right) queue.push(currentNode.right)
+    //     }
+    //         return results  
+    // }
+    DFSPreOrder(){
+        let results = []
+        function traverse(currentNode){7
             results.push(currentNode.value)
-            if(currentNode.left) queue.push(currentNode.left)
-                if(currentNode.right) queue.push(currentNode.right)
+            if(currentNode.left) traverse(currentNode.left)
+            if(currentNode.right) traverse(currentNode.right)
         }
-            return results  
+        traverse(this.root)
+        return results;
     }
 }
 let myTree = new BST()
@@ -57,6 +69,5 @@ myTree.insert(14)
 myTree.insert(133)
 myTree.insert(144)
 myTree.insert(13)
-console.log(myTree.bfs())
-// dfs:  depth first search preorder intro 
+console.log(myTree.DFSPreOrder())
 
