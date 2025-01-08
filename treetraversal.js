@@ -95,3 +95,5 @@ myTree.insert(144)
 myTree.insert(13)
 console.log(myTree.DFSInorder())
 
+
+
