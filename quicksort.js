@@ -16,3 +16,12 @@ function pivot(array, pivotIndex = 0, endIndex = array.length - 1){
 }
 let myArray = [3, 6, 1, 5, 2, 4];
 console.log(pivot(myArray)); // [2, 1, 3, 5, 6, 4]
+function quickSort(array,left=0,right=array.length-1){
+    if(left<right){
+        let pivotIndex = pivot(array,left,right);
+        quickSort(array,left,pivotIndex-1);
+        quickSort(array,pivotIndex+1,right);
+    }
+    return array;
+   
+}
