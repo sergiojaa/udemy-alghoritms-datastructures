@@ -1,4 +1,4 @@
-// basic sorts
+// basic sorts algorithm
 //bubble sort code
 // function bubbleSort(array){
 //     for(let i = array.length - 1;i>0;i--){
